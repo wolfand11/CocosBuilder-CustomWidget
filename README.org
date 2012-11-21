@@ -1,3 +1,3 @@
-#+ Title: GCustomWidget
+#+Title: CocosBuilder-CustomWidget
 
 Note:GCustomWidget is widget property editor helper. it is for CocosBuilder,you can edit widget property in CocosBuilder,but it can't be used in cocos2d-x.
