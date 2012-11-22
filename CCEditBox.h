@@ -34,6 +34,7 @@
     
     int   inputMode;
     int   keyboardReturnType;
+    int   delegate;
 }
 @property(readwrite,nonatomic,retain,setter = setStrPlaceHolder:)NSString*  strPlaceHolder;
 @property(readwrite,nonatomic,retain)NSString*  strText;
@@ -43,6 +44,7 @@
 @property(readwrite,nonatomic,assign)bool       bIsPassword;
 @property(readwrite,nonatomic,assign)int        inputMode;
 @property(readwrite,nonatomic,assign)int        keyboardReturnType;
+@property(readwrite,nonatomic,assign)int        delegate;
 -(void) setStrPlaceHolder:(NSString *)str;
 -(void) setBackgroundSpriteFrame:(CCSpriteFrame*) frame;
 @end

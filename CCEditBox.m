@@ -18,6 +18,7 @@
 @synthesize bIsPassword;
 @synthesize inputMode;
 @synthesize keyboardReturnType;
+@synthesize delegate;
 -(id) init
 {
     if([super init])
