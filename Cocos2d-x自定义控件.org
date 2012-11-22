@@ -1,0 +1,45 @@
+#+Title:cocos2d-x 自定义控件 
+
+** 实现控件的流程
+*** 实现控件
++ 实现游戏中使用的控件。
+#+BEGIN_EXAMPLE
+使用cocos2d-x提供的元素实现游戏中使用的控件。
+#+END_EXAMPLE
+
+*** 实现控件的编辑
++ 列出控件的所有属性。
+#+BEGIN_EXAMPLE
+这个步骤是用来理清楚控件有哪些属性。
+
+例如: CCControlSlider的属性有
+backgroundSpriteFrame
+progressSpriteFrame
+thumbSpriteFrame
+maximumValue
+minimumValue
+value
+#+END_EXAMPLE
+
++ 制作控件的Plugin
+#+BEGIN_EXAMPLE
+这个步骤的作用是告诉CocosBuilder，需要列出控件的哪些属性来编辑。以及需要将控件的哪些属性保存到文件中。
+
+首先复制CCRotateSpritePlugin Project，修改项目名称为CCControlSlider
+其次结合上面列出的属性，修改CCBPProperties.plist文件。
+
+CCBPProperties.plist中数据编辑需要注意的几个问题:
+dontSetInEditor 该字段是用来指定属性是否是用来编辑的，例如Separator类型的属性中，必须指定dontSetInEditor为YES
+IntegerLabeled  类型通常是用来对应枚举类型的属性的。
+#+END_EXAMPLE
+
++ 实现控件的编辑
+#+BEGIN_EXAMPLE
+这个步骤的作用是扩展CocosBuilder,这样，就可以在CocosBuilder中编辑上面制作出来的控件了。
+
+例如: 
+#+END_EXAMPLE
+
+*** FAQ:
++ 首先需要用C++实现控件，然后为了在CocosBuilder中编辑控件又需要用Objective-C来实现一遍控件，那么是不是需要实现两次控件呢?
+答:首先要搞清楚两次实现控件的目的，C++实现控件是因为游戏内容展示需求所决定的，Objective-C实现控件是为了在CocosBuilder中编辑控件的属性。所以，用Objective-C实现控件的工作应该是很简单的工作，我们不必正真地实现某个控件，只需要模拟出来某个控件，将该控件的一些属性映射到正真的控件属性就可以了。
