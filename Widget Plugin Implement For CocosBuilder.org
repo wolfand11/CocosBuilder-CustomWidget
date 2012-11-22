@@ -1,4 +1,5 @@
-#+Title:cocos2d-x 自定义控件 
+#+Title:关于CocosBuilder控件的实现
+本文档描述了使用CocosBuilder制作界面中，实现控件的一般方法和流程。
 
 ** 实现控件的流程
 *** 实现控件
@@ -33,13 +34,14 @@ dontSetInEditor 该字段是用来指定属性是否是用来编辑的，例如S
 IntegerLabeled  类型通常是用来对应枚举类型的属性的。
 #+END_EXAMPLE
 
-+ 实现控件的编辑
++ 实现控件的显示和编辑
 #+BEGIN_EXAMPLE
-这个步骤的作用是扩展CocosBuilder,这样，就可以在CocosBuilder中编辑上面制作出来的控件了。
+这个步骤的作用是扩展CocosBuilder,这样，就可以在CocosBuilder中显示和编辑上面制作出来的控件了。
 
 例如: 
+在CustomWidget中，实现的CCControlSlider(Help)。
 #+END_EXAMPLE
 
-*** FAQ:
+** FAQ:
 + 首先需要用C++实现控件，然后为了在CocosBuilder中编辑控件又需要用Objective-C来实现一遍控件，那么是不是需要实现两次控件呢?
 答:首先要搞清楚两次实现控件的目的，C++实现控件是因为游戏内容展示需求所决定的，Objective-C实现控件是为了在CocosBuilder中编辑控件的属性。所以，用Objective-C实现控件的工作应该是很简单的工作，我们不必正真地实现某个控件，只需要模拟出来某个控件，将该控件的一些属性映射到正真的控件属性就可以了。
