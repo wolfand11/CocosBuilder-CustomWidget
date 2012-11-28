@@ -56,8 +56,8 @@
 *** 属性列表
 + 元素尺寸(size)
   + 可以用contentSize来表示该属性
-+ ListItem排布方向
++ ListItem排布方向(Removed Property)
   + 该属性会影响ListItem的Position和AnchorPoint属性。
     + 水平 kHorizontal ListItem的AnchorPoint为(0.0,0.0)
     + 竖直 kVertical   ListItem的AnchorPoint为(0.0,1.0)
-
+  + 注意:该属性是不需要的，因为当把Item添加到List的时候，会依据List的滑动方向来设置Item的Anchor。

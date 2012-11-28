@@ -63,3 +63,7 @@ IntegerLabeled  类型通常是用来对应枚举类型的属性的。
 3、onAssignCCBMemberVariable的作用是依据CodeConnection中第二项的内容(Target、VariableName)来赋值引用UI元素的变量。注意，变量的绑定和事件响应函数的绑定不同。
 #+END_EXAMPLE
 
+
+*** 属性plist文件的编辑中，需要注意的几个问题:
++ 将属性放置在propertiesOverridden下，可以覆盖父类的属性设置。
++ 将属性设置为readOnly＝Yes，该属性将不会被写到ccb和ccbi文件中。
