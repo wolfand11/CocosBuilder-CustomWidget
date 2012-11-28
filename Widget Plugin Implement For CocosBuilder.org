@@ -66,4 +66,4 @@ IntegerLabeled  类型通常是用来对应枚举类型的属性的。
 
 *** 属性plist文件的编辑中，需要注意的几个问题:
 + 将属性放置在propertiesOverridden下，可以覆盖父类的属性设置。
-+ 将属性设置为readOnly＝Yes，该属性将不会被写到ccb和ccbi文件中。
++ 将属性设置为readOnly＝Yes时，该属性将不会被写到ccb和ccbi文件中。
