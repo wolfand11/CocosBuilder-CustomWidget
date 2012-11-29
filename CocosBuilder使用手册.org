@@ -1,0 +1,20 @@
+#+Title: CocosBuilder使用手册(for designer)
+
+#+BEGIN_EXAMPLE
+该文档主要描述了，使用CocosBuilder拼UI界面的方法、流程以及一些注意事项。
+#+END_EXAMPLE
+
+* CocosBuilder功能概述
+
+* 使用CocosBuilder拼界面的方法
+
+* 一些注意事项
++ 不要使用勾选ignorAnchorPoint的功能，即ignoreAnchorPoint永远是不勾选的。
+#+BEGIN_EXAMPLE
+说明:
+#+END_EXAMPLE
++ 涉及到尺寸、坐标的属性填写，都使用百分比的方式。
+#+BEGIN_EXAMPLE
+说明:这样可以适配不同分辨率的设备。例如:iphone4和iphone5。
+#+END_EXAMPLE
++ 使用CCEditBox控件的时候，在设置CCEditBox的AnchorPoint时，需要将其设置为(0.5,0.5)
