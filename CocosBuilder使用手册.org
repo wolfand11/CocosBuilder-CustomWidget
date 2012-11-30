@@ -18,3 +18,12 @@
 说明:这样可以适配不同分辨率的设备。例如:iphone4和iphone5。
 #+END_EXAMPLE
 + 使用CCEditBox控件的时候，在设置CCEditBox的AnchorPoint时，需要将其设置为(0.5,0.5)
+#+BEGIN_EXAMPLE
+说明:anchorPoint设置为其他值时，CCEidtBox控件在程序中的显示会出错。
+#+END_EXAMPLE
++ 在Publish界面配置的时候，需要确定是否每个ccb文件都保存过了。
+#+BEGIN_EXAMPLE
+说明:没有保存ccb文件就Publish，ccb文件的内容不会被publish到ccbi文件中。
+#+END_EXAMPLE
+
+
