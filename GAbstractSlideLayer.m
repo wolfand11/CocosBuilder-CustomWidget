@@ -10,4 +10,5 @@
 
 @implementation GAbstractSlideLayer
 @synthesize direction;
+@synthesize speedDecreaseFactor;
 @end

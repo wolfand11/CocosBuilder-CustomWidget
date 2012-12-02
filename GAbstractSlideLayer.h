@@ -18,6 +18,8 @@ typedef enum
 @interface GAbstractSlideLayer : GAbstractTouchLayer
 {
     ESlideDirection direction;
+    float           speedDecreaseFactor;
 }
 @property(readwrite,nonatomic,assign)ESlideDirection direction;
+@property(readwrite,nonatomic,assign)float speedDecreaseFactor;
 @end

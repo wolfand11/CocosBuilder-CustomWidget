@@ -11,7 +11,7 @@
 * 一些注意事项
 + 不要使用勾选ignorAnchorPoint的功能，即ignoreAnchorPoint永远是不勾选的。
 #+BEGIN_EXAMPLE
-说明:
+说明:程序的bug。目前已经修正，可以使用该功能了。
 #+END_EXAMPLE
 + 涉及到尺寸、坐标的属性填写，都使用百分比的方式。
 #+BEGIN_EXAMPLE
