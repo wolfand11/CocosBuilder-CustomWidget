@@ -8,6 +8,7 @@
 
 #import "CCEditBox.h"
 #import "CCScale9Sprite.h"
+#import "GCustomWidgetDefine.h"
 
 @implementation CCEditBox
 @synthesize strText;
@@ -24,7 +25,7 @@
     if([super init])
     {
         strPlaceHolder = @"";
-        background = [CCScale9Sprite spriteWithFile:@"help-logo.png"];
+        background = [CCScale9Sprite spriteWithFile:kDefaultPngFilePath];
         [background setOpacity:255];
         [background setColor:ccWHITE];
         [background setAnchorPoint:CGPointMake(0, 0)];

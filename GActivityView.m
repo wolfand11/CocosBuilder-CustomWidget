@@ -7,6 +7,7 @@
 //
 
 #import "GActivityView.h"
+#import "GCustomWidgetDefine.h"
 
 @implementation GActivityView
 @synthesize activityPos;
@@ -18,8 +19,8 @@
     if([super init])
     {
         backgroundLayer = [CCLayerColor layerWithColor:ccc4(255, 255, 255, 100)];
-        background  = [CCSprite spriteWithFile:@"help-logo.png"];
-        activity    = [CCSprite spriteWithFile:@"help-logo.png"];
+        background  = [CCSprite spriteWithFile:kDefaultPngFilePath];
+        activity    = [CCSprite spriteWithFile:kDefaultPngFilePath];
         needUpdateRotateSpeed = false;
         
         [self addChild:background];
