@@ -1,0 +1,61 @@
+#+Title: CocosBuilder使用手册(for designer)
+
+#+BEGIN_EXAMPLE
+该文档主要描述了，使用CocosBuilder拼UI界面的方法、流程以及一些注意事项。
+#+END_EXAMPLE
+
+* CocosBuilder功能概述
+
+* 制作规范
+** UI 的组织
+1、需要为每个页面新建一个ccb文件，而不是将所有的UI元素都放在一个Layer上，这样的话当一个页面有问题的时候，不会影响到其他的页面。
+
+2、属于同一个场景的所有的页面通过一个页面来组织。
+#+BEGIN_EXAMPLE
+例如: 在Scene1场景中有3个layer:scene1_layer1.ccb、scene1_layer2.ccb、scene1_layer3.ccb.我们需要创建一个scene1.ccb文件，将这3个layer都添加到scene1.ccb中。
+#+END_EXAMPLE
+
+3、所有需要逻辑控制的Layer都要放到Scene下面。不需要逻辑控制的Layer可以按照层次结构放置。
+#+BEGIN_EXAMPLE
+例如:
+MainScene＝＝＝＝＝＝＝＝＝(1级)
+-->MainBgLayer＝＝＝＝＝＝(2级)(该LayerLayer没有执行游戏逻辑，按照层次结构，将其放置在MainScene下)
+-->MainLayer＝＝＝＝＝＝＝(2级)
+-->MainPanelLayer＝＝＝＝(2级)
+---->MainPanelBg================(3级)(该Layer没有执行游戏逻辑，按照层次结构，将其放置在MainPanelLayer下)
+-->FriendsLayer＝＝＝＝＝(2级)(MainPanelLayer同时显示)
+-->StoreLayer＝＝＝＝＝＝(2级)(MainPanelLayer同时显示)
+#+END_EXAMPLE
+#+TODO: 
++ 是否考虑支持，所有Layer都按照层级结构来组织，而不是要求有逻辑控制的Layer需要放置到Scene下面?
+#+BEGIN_EXAMPLE
+如果这样做的话，在程序中就需要实现多个管理类来，管理其下面的Layer元素。增加了程序的复杂度。
+#+END_EXAMPLE
+
+** UI元素的坐标
+*** 分辨率选择
+考虑到iphone5的适配，需要在为每个layer创建ccb file的时候选择两个分辨率(iPhone Landscape－960*640和iPhone 5 Landscape1136*640)
+
+*** UI元素坐标、contentSize设置
+所有的坐标和contentSize都使用百分比的方式来设置，这样就可以兼容不同的设备分辨率了。
+
+
+* 注意事项
++ 不要使用勾选ignorAnchorPoint的功能，即ignoreAnchorPoint永远是不勾选的。
+#+BEGIN_EXAMPLE
+说明:程序的bug。目前已经修正，可以使用该功能了。
+#+END_EXAMPLE
++ 涉及到尺寸、坐标的属性填写，都使用百分比的方式。
+#+BEGIN_EXAMPLE
+说明:这样可以适配不同分辨率的设备。例如:iphone4和iphone5。
+#+END_EXAMPLE
++ 使用CCEditBox控件的时候，在设置CCEditBox的AnchorPoint时，需要将其设置为(0.5,0.5)
+#+BEGIN_EXAMPLE
+说明:anchorPoint设置为其他值时，CCEidtBox控件在程序中的显示会出错。
+#+END_EXAMPLE
++ 在Publish界面配置的时候，需要确定是否每个ccb文件都保存过了。
+#+BEGIN_EXAMPLE
+说明:没有保存ccb文件就Publish，ccb文件的内容不会被publish到ccbi文件中。
+#+END_EXAMPLE
+
+

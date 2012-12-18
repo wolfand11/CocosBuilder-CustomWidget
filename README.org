@@ -1,3 +1,10 @@
 #+Title: CocosBuilder-CustomWidget
 
 Note:GCustomWidget is widget property editor helper. it is for CocosBuilder,you can edit widget property in CocosBuilder,but it can't be used in cocos2d-x.
+
+** 游戏制作中使用CocosBuilder的一些经验:
+*** For UI Designer 
++ [[file:./1CocosBuilderUI制作规范.org][CocosBuilderUI制作规范]]
+*** For Programer   
++ [[file:./2-1-实现CocosBuilder控件插件.org][实现CocosBuilder控件插件]]
++ [[file:./2-2-实现cocos2d控件.org][实现cocos2d控件]]

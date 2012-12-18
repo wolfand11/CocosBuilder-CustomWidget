@@ -37,9 +37,8 @@ IntegerLabeled  类型通常是用来对应枚举类型的属性的。
 + 实现控件的显示和编辑
 #+BEGIN_EXAMPLE
 这个步骤的作用是扩展CocosBuilder,这样，就可以在CocosBuilder中显示和编辑上面制作出来的控件了。
-
-例如: 
-在CustomWidget中，实现的CCControlSlider(Help)。
+(1)对于cocos2d中已经有的控件，我们只要对已有控件进行扩展，来满足编辑需求就可以了。例如CCProgressTimer(Help)和CCControlSlider(Help)。
+(2)对于我们自己定义的控件，我们需要使用cocos2d提供的元素，配合OpenGL来模拟我们自定义的控件，添加需要编辑的属性。例如:CCEditBox
 #+END_EXAMPLE
 
 
@@ -52,7 +51,9 @@ IntegerLabeled  类型通常是用来对应枚举类型的属性的。
 
 ** FAQ:
 *** 首先需要用C++实现控件，然后为了在CocosBuilder中编辑控件又需要用Objective-C来实现一遍控件，那么是不是需要实现两次控件呢?
+#+BEGIN_EXAMPLE
 答:首先要搞清楚两次实现控件的目的，C++实现控件是因为游戏内容展示需求所决定的，Objective-C实现控件是为了在CocosBuilder中编辑控件的属性。所以，用Objective-C实现控件的工作应该是很简单的工作，我们不必正真地实现某个控件，只需要模拟出来某个控件，将该控件的一些属性映射到正真的控件属性就可以了。
+#+END_EXAMPLE
 
 *** 通过这种方式来使用控件的流程是怎样的呢?
 1) 通过CocosBuilder将控件属性导出到xml文件中。
@@ -61,7 +62,7 @@ IntegerLabeled  类型通常是用来对应枚举类型的属性的。
 需要注意的问题:
 1、onResolveCCBCCControlSelector、onResolveCCBCCMenuItemSelector这两个函数的作用是依据Block的Selector内容来获得对应的函数指针。
 2、onHandlePropTypeBlock、onHandlePropTypeBlockCCControl这两个函数是设置控件的事件响应函数。
-3、onAssignCCBMemberVariable的作用是依据CodeConnection中第二项的内容(Target、VariableName)来赋值引用UI元素的变量。注意，变量的绑定和事件响应函数的绑定不同。
+3、onAssignCCBMemberVariable的作用是依据CocosBuilder属性编辑选项CodeConnection中第二项的内容(Target、VariableName)来赋值引用UI元素的变量。注意，变量的绑定和事件响应函数的绑定不同。
 #+END_EXAMPLE
 
 

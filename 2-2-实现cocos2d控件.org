@@ -1,5 +1,12 @@
 #+Title: 自定义控件的实现
 
+** 关于UI的实现
+*** UI界面需要解决的几个问题: 
++ 显示在哪儿? 坐标问题。
++ 支持哪些用户操作? 事件相应问题。
++ 显示一些什么内容? 逻辑问题。
+
+
 ** NormalScrollList
 #+BEGIN_EXAMPLE
 普通滑动列表
@@ -27,6 +34,14 @@
   + 该属性会影响List的Position和AnchorPoint属性。
     + 水平 kHorizontal List的AnchorPoint为(0.0,0.0)
     + 竖直 kVertical   List的AnchorPoint为(0.0,1.0)
+
+*** 控件实现
+**** 注意事项
++ 初始化List位置 initListPos 不要通过调用 moveTo来实现。虽然initListPos和moveTo的功能逻辑相同，但是他们的画面表现不同。
+
+
+
+
 
 ** CardScrollList 
 #+BEGIN_EXAMPLE
