@@ -49,6 +49,9 @@ IntegerLabeled  类型通常是用来对应枚举类型的属性的。
  + 在生成xml配置的时候，对属性进行排序。这样在C++中读取xml配置的时候就会按照特定的顺序。
  + 在C++代码中写逻辑保证属性的设置顺序。
 
+*** 在自定义的GTab中添加CCMenuItem以后，其中的CCMenuItem无法移动。
+这是因为GTab截取了mouseDown事件。只要在GTab的init中调用［setTouchEnable false］就可以了。
+
 ** FAQ:
 *** 首先需要用C++实现控件，然后为了在CocosBuilder中编辑控件又需要用Objective-C来实现一遍控件，那么是不是需要实现两次控件呢?
 #+BEGIN_EXAMPLE
