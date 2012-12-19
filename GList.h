@@ -10,4 +10,6 @@
 
 @interface GList : GAbstractSlideLayer
 
+-(void) setPosition:(CGPoint)position;
+
 @end

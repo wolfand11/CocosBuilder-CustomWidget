@@ -10,4 +10,11 @@
 
 @implementation GList
 
+- (void) setPosition:(CGPoint)position
+{
+    [super setPosition:position];
+    [self setContentSize:CGSizeZero];
+    self.touchRectOrigin = position;
+}
+
 @end
