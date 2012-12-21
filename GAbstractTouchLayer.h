@@ -15,4 +15,6 @@
 }
 @property(readwrite,nonatomic,assign)CGPoint touchRectOrigin;
 @property(readwrite,nonatomic,assign)CGSize  touchRectSize;
+
+-(void) drawTouchRect;
 @end

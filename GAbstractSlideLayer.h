@@ -19,7 +19,13 @@ typedef enum
 {
     ESlideDirection direction;
     float           speedDecreaseFactor;
+    CGSize          slideBoundSize;
+    CGPoint         slideBoundOrigin;
 }
 @property(readwrite,nonatomic,assign)ESlideDirection direction;
 @property(readwrite,nonatomic,assign)float speedDecreaseFactor;
+@property(readwrite,nonatomic,assign)CGRect slideBound;
+@property(readwrite,nonatomic,assign)CGPoint slideBoundOrigin;
+@property(readwrite,nonatomic,assign)CGSize slideBoundSize;
+-(void) drawSlideBound;
 @end

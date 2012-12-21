@@ -16,9 +16,15 @@
 {
 	[super draw];
     
+    [self drawTouchRect];
+}
+
+//TouchRect 是相对于 世界坐标系统的值
+-(void) drawTouchRect
+{
     //ccDrawRect( CGPoint origin, CGPoint destination )
-    glLineWidth( 2.0f );
-    ccDrawColor4B(255,0,0,255);
+    glLineWidth( 1.5f );
+    ccDrawColor4B(0,200,0,255);
     
     CGPoint origin = touchRectOrigin;
     origin.x -= self.position.x;
@@ -31,5 +37,4 @@
     //destination = [self convertToNodeSpace:destination];
     ccDrawRect(origin, destination);
 }
-
 @end

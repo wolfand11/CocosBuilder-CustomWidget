@@ -31,4 +31,35 @@
     return maxSize;
 }
 
++(float)    GetFloatAbsoluteValue:(float)value
+{
+    if (value<0.0f)
+    {
+        value = -value;
+    }
+    return value;
+}
+
++(BOOL) IsPointA:(CGPoint)posA EqualToPointB:(CGPoint)posB
+{
+    float deltaX = ABS(posA.x - posB.x);
+    float deltaY = ABS(posB.y - posB.y);
+    
+    if (deltaX < 0.5f && deltaY < 0.5f)
+    {
+        return YES;
+    }
+    return NO;
+}
+
++(BOOL) IsSizeA:(CGSize)sizeA EqualToSizeB:(CGSize)sizeB
+{
+    float deltaWidth    = ABS(sizeA.width - sizeB.width);
+    float deltaHeight   = ABS(sizeA.height - sizeB.height);
+    if ( deltaWidth < 0.5f && deltaHeight < 0.5f )
+    {
+        return YES;
+    }
+    return NO;
+}
 @end

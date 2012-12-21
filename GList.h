@@ -9,7 +9,11 @@
 #import "GAbstractSlideLayer.h"
 
 @interface GList : GAbstractSlideLayer
+{
+    BOOL m_needAdjustPos;
+    BOOL m_needAdjustTouchRectOrigin;
+}
 
 -(void) setPosition:(CGPoint)position;
-
+-(void) setTouchRectOrigin:(CGPoint)touchRectOrigin;
 @end
