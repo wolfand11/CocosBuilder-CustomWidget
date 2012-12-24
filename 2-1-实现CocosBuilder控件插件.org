@@ -52,6 +52,9 @@ IntegerLabeled  类型通常是用来对应枚举类型的属性的。
 *** 在自定义的GTab中添加CCMenuItem以后，其中的CCMenuItem无法移动。
 这是因为GTab截取了mouseDown事件。只要在GTab的init中调用［setTouchEnable false］就可以了。
 
+*** 如何添加新的RootNode?
+CocosBuilder默认的RootNode类型只有:CCNode CCLayer CCSprite等几种。要想使自定义的节点能作为Root节点，需要在PropertyList中设置canBeRootNode=YES。
+需要注意的是，RootNode的canBeFullScreen属性，需要修改CocosBuilder的源代码(NewDocWindowController的canBeFullScreen方法)。
 ** FAQ:
 *** 首先需要用C++实现控件，然后为了在CocosBuilder中编辑控件又需要用Objective-C来实现一遍控件，那么是不是需要实现两次控件呢?
 #+BEGIN_EXAMPLE
