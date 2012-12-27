@@ -18,12 +18,15 @@ typedef enum
 @interface GAbstractSlideLayer : GAbstractTouchLayer
 {
     ESlideDirection direction;
+    float           friction;
+    float           mass;
     float           speedDecreaseFactor;
     CGSize          slideBoundSize;
     CGPoint         slideBoundOrigin;
 }
 @property(readwrite,nonatomic,assign)ESlideDirection direction;
-@property(readwrite,nonatomic,assign)float speedDecreaseFactor;
+@property(readwrite,nonatomic,assign)float friction;
+@property(readwrite,nonatomic,assign)float mass;
 @property(readwrite,nonatomic,assign)CGRect slideBound;
 @property(readwrite,nonatomic,assign)CGPoint slideBoundOrigin;
 @property(readwrite,nonatomic,assign)CGSize slideBoundSize;
