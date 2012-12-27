@@ -8,7 +8,7 @@
 
 #import "GAbstractSlideLayer.h"
 
-@interface GList : GAbstractSlideLayer
+@interface GAbstractSlideContainer : GAbstractSlideLayer
 {
     BOOL m_needAdjustPos;
     BOOL m_needAdjustTouchRectOrigin;

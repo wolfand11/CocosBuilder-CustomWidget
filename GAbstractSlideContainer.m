@@ -6,13 +6,13 @@
 //
 //
 
-#import "GList.h"
+#import "GAbstractSlideContainer.h"
 #import "PositionPropertySetter.h"
 #import "CocosBuilderAppDelegate.h"
 #import "CocosScene.h"
 #import "GUtility.h"
 
-@implementation GList
+@implementation GAbstractSlideContainer
 
 - (void) setPosition:(CGPoint)position
 {
