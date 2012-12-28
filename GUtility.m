@@ -62,4 +62,14 @@
     }
     return NO;
 }
+
++(CGSize) GetMaxContentSizeOfNode:(CCNode *)node
+{
+    CGSize temp = CGSizeZero;
+    if (node)
+    {
+        // TODO:
+    }
+    return temp;
+}
 @end
