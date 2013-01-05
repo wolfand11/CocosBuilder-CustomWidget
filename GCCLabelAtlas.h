@@ -14,12 +14,12 @@
     CCSpriteFrame*  fontAtlas_;
     NSUInteger      itemHeight_;
     NSUInteger      itemWidth_;
-    NSUInteger      mapStartChar_;
+    NSUInteger      startChar_;
     NSString*       string_;
 }
 @property(readwrite,nonatomic,assign)NSUInteger     itemWidth;
 @property(readwrite,nonatomic,assign)NSUInteger     itemHeight;
-@property(readwrite,nonatomic,assign)NSUInteger     mapStartChar;
+@property(readwrite,nonatomic,assign)NSUInteger     startChar;
 @property(readwrite,nonatomic,assign)CCSpriteFrame* fontAtlas;
 @property(readwrite,nonatomic,retain)NSString*      string;
 @end

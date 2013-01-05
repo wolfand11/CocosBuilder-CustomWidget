@@ -12,7 +12,7 @@
 @implementation GCCLabelAtlas
 @synthesize itemHeight;
 @synthesize itemWidth;
-@synthesize mapStartChar;
+@synthesize startChar;
 @synthesize fontAtlas;
 @synthesize string;
 
