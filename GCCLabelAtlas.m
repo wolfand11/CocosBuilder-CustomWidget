@@ -65,4 +65,9 @@
     
     [self updateAtlasValues];
 }
+
+-(id) getString
+{
+    return string_;
+}
 @end
