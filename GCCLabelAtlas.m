@@ -10,11 +10,11 @@
 #import "GCustomWidgetDefine.h"
 #define kDefaultItemSize    3
 @implementation GCCLabelAtlas
-@synthesize itemHeight;
-@synthesize itemWidth;
-@synthesize startChar;
-@synthesize fontAtlas;
-@synthesize string;
+@synthesize itemWidth = itemWidth_;
+@synthesize itemHeight = itemHeight_;
+@synthesize string = string_;
+@synthesize startChar = startChar_;
+@synthesize fontAtlas = fontAtlas_;
 
 -(void) updateAtlasValues
 {
@@ -64,10 +64,5 @@
     }
     
     [self updateAtlasValues];
-}
-
--(id) getString
-{
-    return string_;
 }
 @end

@@ -20,6 +20,6 @@
 @property(readwrite,nonatomic,assign)NSUInteger     itemWidth;
 @property(readwrite,nonatomic,assign)NSUInteger     itemHeight;
 @property(readwrite,nonatomic,assign)NSUInteger     startChar;
-@property(readwrite,nonatomic,assign)CCSpriteFrame* fontAtlas;
 @property(readwrite,nonatomic,retain)NSString*      string;
+@property(readwrite,nonatomic,assign)CCSpriteFrame* fontAtlas;
 @end
