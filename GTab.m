@@ -9,5 +9,13 @@
 #import "GTab.h"
 
 @implementation GTab
-
+-(id) init
+{
+    self = [super init];
+    if (!self) return NULL;
+    
+    self.isMouseEnabled = NO;
+    
+    return self;
+}
 @end
