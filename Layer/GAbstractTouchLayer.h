@@ -7,8 +7,8 @@
 //
 
 #import "CCLayer.h"
-
-@interface GAbstractTouchLayer : CCLayer
+#import "GAbstractLayer.h"
+@interface GAbstractTouchLayer :GAbstractLayer
 {
     CGPoint touchRectOrigin;
     CGSize  touchRectSize;
