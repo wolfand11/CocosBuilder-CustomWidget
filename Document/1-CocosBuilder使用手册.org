@@ -45,8 +45,10 @@ MainScene＝＝＝＝＝＝＝＝＝(1级)
 #+BEGIN_EXAMPLE
 说明:程序的bug。目前已经修正，可以使用该功能了。
 #+END_EXAMPLE
-+ 涉及到尺寸、坐标的属性填写，都使用百分比的方式。
++ 关于尺寸、坐标的属性填写。
 #+BEGIN_EXAMPLE
+(1)最外层的UI元素都使用百分比的方式。坐标使用50%、尺寸使用100%
+(2)子UI元素更具实际情况使用对应的方式，如果iphone4和iphone5中，ui元素的坐标、尺寸相同则使用绝对数值设置属性，否则使用百分比的方式来适配。
 说明:这样可以适配不同分辨率的设备。例如:iphone4和iphone5。
 #+END_EXAMPLE
 + 使用CCEditBox控件的时候，在设置CCEditBox的AnchorPoint时，需要将其设置为(0.5,0.5)
@@ -59,3 +61,10 @@ MainScene＝＝＝＝＝＝＝＝＝(1级)
 #+END_EXAMPLE
 
 
+
++ GList控件不能勾选ignorAnchorPoint功能。
+#+BEGIN_EXAMPLE
+当anchorPoint=(0.0,1.0)时，表示列表中元素从上往下排布。
+#+END_EXAMPLE
+
++ GScale9Sprite的AnchorPoint必须为(0.5,0.5)；
