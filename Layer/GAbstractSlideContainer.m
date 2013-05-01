@@ -41,11 +41,11 @@
 {
     if (m_needAdjustPos)
     {
-        position_ = [[CocosScene cocosScene] convertToViewSpace:touchRectOrigin];
-        position_ = [self.parent convertToNodeSpace:position_];
+        _position = [[CocosScene cocosScene] convertToViewSpace:touchRectOrigin];
+        _position = [self.parent convertToNodeSpace:_position];
         if (direction == kSlideDirection_Vertical)
         {
-            position_.y += touchRectSize.height;
+            _position.y += touchRectSize.height;
         }
         m_needAdjustPos = NO;
     }

@@ -75,7 +75,7 @@
 {
     if (background)
     {
-        contentSize_ = contentSize;
+        _contentSize = contentSize;
         [background setPreferedSize:contentSize];
         [label setPosition:CGPointMake(0, self.contentSize.height/2)];
         [label setFontSize:self.contentSize.height*2/3];

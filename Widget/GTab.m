@@ -14,7 +14,7 @@
     self = [super init];
     if (!self) return NULL;
     
-    self.isMouseEnabled = NO;
+    self.mouseEnabled = NO;
     
     return self;
 }

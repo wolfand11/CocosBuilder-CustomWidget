@@ -36,7 +36,7 @@
 
 -(CGPoint) getCustomMidpoint
 {
-    return midpoint_;
+    return _midpoint;
 }
 
 -(void) setCustomType:(CCProgressTimerType) type
