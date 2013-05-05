@@ -41,7 +41,6 @@ IntegerLabeled  类型通常是用来对应枚举类型的属性的。
 (2)对于我们自己定义的控件，我们需要使用cocos2d提供的元素，配合OpenGL来模拟我们自定义的控件，添加需要编辑的属性。例如:CCEditBox
 #+END_EXAMPLE
 
-
 ** 遇到的问题:
 *** 在C++中读取xml配置然后设置控件属性的时候，如何保证按照特定的顺序设置控件属性呢?
 + 默认情况下xml中属性的顺序和plist文件中properties的顺序是一致的，所以要想控制属性的设置顺序需要对plist文件中的properties进行排序。但是，对于position、contentSize等属于CCNode的属性，就没办法设置了。
@@ -55,6 +54,7 @@ IntegerLabeled  类型通常是用来对应枚举类型的属性的。
 *** 如何添加新的RootNode?
 CocosBuilder默认的RootNode类型只有:CCNode CCLayer CCSprite等几种。要想使自定义的节点能作为Root节点，需要在PropertyList中设置canBeRootNode=YES。
 需要注意的是，RootNode的canBeFullScreen属性，需要修改CocosBuilder的源代码(NewDocWindowController的canBeFullScreen方法)。
+
 ** FAQ:
 *** 首先需要用C++实现控件，然后为了在CocosBuilder中编辑控件又需要用Objective-C来实现一遍控件，那么是不是需要实现两次控件呢?
 #+BEGIN_EXAMPLE
@@ -71,7 +71,23 @@ CocosBuilder默认的RootNode类型只有:CCNode CCLayer CCSprite等几种。要
 3、onAssignCCBMemberVariable的作用是依据CocosBuilder属性编辑选项CodeConnection中第二项的内容(Target、VariableName)来赋值引用UI元素的变量。注意，变量的绑定和事件响应函数的绑定不同。
 #+END_EXAMPLE
 
-
 *** 属性plist文件的编辑中，需要注意的几个问题:
 + 将属性放置在propertiesOverridden下，可以覆盖父类的属性设置。
 + 将属性设置为readOnly＝Yes时，该属性将不会被写到ccb和ccbi文件中。
++ 当属性值等于defaultSerialization时，CocosBuilder会忽略该属性值，而不将其写入ccb文件。
+
+*** 控件的编辑类中属性编辑函数的实现注意事项
+CocosBuilder是通过反射机制来动态设置控件的属性的，即在CocosBuilder底层他通过传递名称来调用函数，所以在属性plist中name字段的值要和编辑类中属性设置函数的名称相匹配。
+#+BEGIN_EXAMPLE
+例如:
+GShadowLabelTTF 中有一下代码:
+//.h file
+@interface GShadowLabelTTF
+{
+    GShadowType shadowType;
+}
+@property (nonatomic,assign,readwrite,setter = setShadowType:)GShadowType shadowType;
+//.m file
+@synthesize shadowType;
+那么在其对应的plist中name所对应的值也需要填写shadowType
+#+END_EXAMPLE
