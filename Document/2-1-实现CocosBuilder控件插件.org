@@ -103,12 +103,14 @@ PluginNode.m - (NSArray*) animatablePropertiesForNode:(CCNode*)node
 
 最后发现是因为MainMenu.xib文件中没有为新添加的MenuItem关联事件处理的代码。
 #+END_EXAMPLE
-**** xib的修改
-***** InspectorBlock.xib InspectorCodeConnections.xib
+*** CocosBuilder xib的修改
+**** xib修改使用的Xcode版本
+CocosBuilder_v3.x 中得xib文件使用Xcode 4.6打开。可以在Xcode5中设置xib编辑所使用的xcode版本。
+**** InspectorBlock.xib InspectorCodeConnections.xib
 #+BEGIN_EXAMPLE
 添加Near parent选项。注意这里需要设置tag，不需要为控件关联事件代码。
 #+END_EXAMPLE
-***** MainMenu.xib
+**** MainMenu.xib
 #+BEGIN_EXAMPLE
 添加新的关键帧类型，例如 start BezierPos。注意这里需要为控件关联事件代码。
 #+END_EXAMPLE
