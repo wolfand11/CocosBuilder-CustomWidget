@@ -22,7 +22,7 @@
     return self;
 }
 
--(void) update:(float)delta
+-(void) update:(ccTime)delta
 {
     if (!CGSizeEqualToSize(tempMaxContentSize, [GUtility GetMaxContentSizeOfNode:self]))
     {
