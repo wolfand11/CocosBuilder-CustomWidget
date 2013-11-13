@@ -14,66 +14,14 @@
 
 @implementation GAbstractSlideContainer
 
-- (void) setPosition:(CGPoint)position
+-(id) init
 {
-    m_needAdjustTouchRectOrigin = YES;
-    
-    [super setPosition:position];
-    [self setContentSize:CGSizeZero];
-    [self updateTouchRectAndPosition];
-}
-
--(void) setTouchRectOrigin:(CGPoint)pos
-{
-    // do nothing
-    // touchRectOrigin value is equal to postion
-}
-
--(void) setTouchRectSize:(CGSize)size
-{
-    m_needAdjustPos = YES;
-    
-    [super setTouchRectSize:size];
-    [self updateTouchRectAndPosition];
-}
-
--(void) adjustPosOrTouchRectOrigin
-{
-    if (m_needAdjustPos)
+    if ([super init])
     {
-        _position = [[CocosScene cocosScene] convertToViewSpace:touchRectOrigin];
-        _position = [self.parent convertToNodeSpace:_position];
-        if (direction == kSlideDirection_Vertical)
-        {
-            _position.y += touchRectSize.height;
-        }
-        m_needAdjustPos = NO;
+        [self setIgnoreAnchorPointForPosition:NO];
+        return self;
     }
-    if (m_needAdjustTouchRectOrigin)
-    {
-        touchRectOrigin = [self.parent convertToWorldSpace:self.position];
-        touchRectOrigin = [[CocosScene cocosScene] convertToDocSpace:touchRectOrigin];
-        if (direction == kSlideDirection_Vertical)
-        {
-            touchRectOrigin.y -= touchRectSize.height;
-        }
-        [PositionPropertySetter setPosition:NSPointFromCGPoint(touchRectOrigin) forNode:[[CocosBuilderAppDelegate appDelegate] selectedNode] prop:@"touchRectOrigin"];
-        m_needAdjustTouchRectOrigin = NO;
-    }
-}
-
--(void) updateTouchRectAndPosition
-{
-    [self adjustPosOrTouchRectOrigin];
-    [[CocosBuilderAppDelegate appDelegate] refreshProperty:@"position"];
-    [[CocosBuilderAppDelegate appDelegate] refreshProperty:@"touchRectOrigin"];
-}
-
--(void) setDirection:(ESlideDirection)argDirection
-{
-    [super setDirection:argDirection];
-    m_needAdjustPos = YES;
-    [self updateTouchRectAndPosition];
+    return nil;
 }
 
 @end
