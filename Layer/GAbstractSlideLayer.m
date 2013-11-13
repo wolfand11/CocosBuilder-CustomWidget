@@ -11,8 +11,8 @@
 
 @implementation GAbstractSlideLayer
 @synthesize direction;
-@synthesize friction;
-@synthesize mass;
+@synthesize slideLayerMoveType;
+@synthesize outBoundMoveType;
 @synthesize slideBoundOrigin;
 @synthesize slideBoundSize;
 

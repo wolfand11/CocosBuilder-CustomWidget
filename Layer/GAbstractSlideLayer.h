@@ -15,18 +15,29 @@ typedef enum
     kSlideDirection_Any
 }ESlideDirection;
 
+typedef enum
+{
+    kESlideLayerMoveType_Auto = 0,
+    kESlideLayerMoveType_AdjustToSpecialPoint,
+}ESlideLayerMoveType;
+
+typedef enum  //slide layer out bound move type
+{
+    kESLOutBoundMoveType_DontMove = 0,
+    kESLOutBoundMoveType_EaseOutMove,
+}ESLOutBoundMoveType;
+
 @interface GAbstractSlideLayer : GAbstractTouchLayer
 {
-    ESlideDirection direction;
-    float           friction;
-    float           mass;
-    float           speedDecreaseFactor;
+    ESlideDirection     direction;
+    ESlideLayerMoveType slideLayerMoveType;
+    ESLOutBoundMoveType outBoundMoveType;
     CGSize          slideBoundSize;
     CGPoint         slideBoundOrigin;
 }
 @property(readwrite,nonatomic,assign)ESlideDirection direction;
-@property(readwrite,nonatomic,assign)float friction;
-@property(readwrite,nonatomic,assign)float mass;
+@property(readwrite,nonatomic,assign)ESlideLayerMoveType slideLayerMoveType;
+@property(readwrite,nonatomic,assign)ESLOutBoundMoveType outBoundMoveType;
 @property(readwrite,nonatomic,assign)CGRect slideBound;
 @property(readwrite,nonatomic,assign)CGPoint slideBoundOrigin;
 @property(readwrite,nonatomic,assign)CGSize slideBoundSize;
