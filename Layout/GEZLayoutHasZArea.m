@@ -9,7 +9,7 @@
 #import "GEZLayoutHasZArea.h"
 
 @implementation GEZLayoutHasZArea
-@synthesize startZoomItemsIndex;
+@synthesize startZoomIndex;
 @synthesize zoomItemsCount;
 @synthesize showedItemsCount;
 @end
