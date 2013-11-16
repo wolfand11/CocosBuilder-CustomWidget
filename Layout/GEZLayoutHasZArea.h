@@ -6,9 +6,9 @@
 //
 //
 
-#import "GAbstractLayout.h"
+#import "GEZLayout.h"
 
-@interface GEZLayoutHasZArea : GAbstractLayout
+@interface GEZLayoutHasZArea : GEZLayout
 {
     int startZoomIndex;
     int zoomItemsCount;
