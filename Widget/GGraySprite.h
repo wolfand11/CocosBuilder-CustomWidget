@@ -12,5 +12,4 @@
 
 +(id) spriteWithFile:(NSString*)filename;
 -(id) initWithTexture:(CCTexture2D*)texture rect:(CGRect)rect rotated:(BOOL)rotated;
-//-(void) draw;
 @end
