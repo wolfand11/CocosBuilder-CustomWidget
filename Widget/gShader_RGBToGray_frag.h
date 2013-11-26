@@ -17,6 +17,6 @@ void main(void)                                                 \n\
     // Convert to greyscale using NTSC weightings               \n\
     vec4 col = texture2D(u_texture, v_texCoord);                \n\
     float grey = dot(col.rgb, vec3(0.299, 0.587, 0.114));       \n\
-    gl_FragColor = vec4(grey, grey, grey, col.a);               \n\
+    gl_FragColor = vec4(grey, grey, grey, col.a) * v_fragmentColor; \n\
 }                                                               \n\
 ";
